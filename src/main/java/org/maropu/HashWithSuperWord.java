@@ -60,7 +60,7 @@ public class HashWithSuperWord {
 
   @Benchmark
   @CompilerControl(CompilerControl.Mode.DONT_INLINE) // This makes looking at assembly easier
-  public int[] test(Context context) {
+  public int[] Murmur3_x86_32_hashInt(Context context) {
     for (int i = 0; i < SIZE; i++) {
       context.results[i] = Murmur3_x86_32.hashInt(context.values[i], 0);
     }
