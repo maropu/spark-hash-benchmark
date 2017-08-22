@@ -28,8 +28,14 @@
 
 set -e -o pipefail
 
-# TODO: Need to automatically get variables below from a current platform
-TARGET_OS="linux"
+# Check an OS name in the current platform
+_OS_NAME="$(uname -s)"
+case "${_OS_NAME}" in
+  Linux*)  TARGET_OS="linux";;
+  Darwin*) TARGET_OS="macosx";;
+  *)       echo "Unsupported OS: ${_OS_NAME}" 1>&2; exit 1
+esac
+
 TARGET_ARCH="amd64"
 
 # JDK version used to compile hsdis (e.g., jdk8u, jdk9, ...)
