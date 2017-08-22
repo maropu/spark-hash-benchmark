@@ -22,4 +22,5 @@ benchmark_outputs
 .mvn/timing.properties
 
 # Additional settings
-build/zinc-*
+bin/hotspot
+build/apache-maven-*
