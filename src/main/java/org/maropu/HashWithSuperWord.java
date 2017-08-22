@@ -38,7 +38,10 @@ import org.apache.spark.unsafe.hash.Murmur3_x86_32;
 @State(Scope.Thread)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @BenchmarkMode(Mode.AverageTime)
-@Fork(value = 1, jvmArgsAppend = {"-XX:+UseSuperWord", "-XX:+UnlockDiagnosticVMOptions"})
+@Fork(value = 1, jvmArgsAppend = {
+  "-XX:+UseSuperWord",
+  "-XX:+UnlockDiagnosticVMOptions",
+  "-XX:CompileCommand=print,*HashWithSuperWord.Murmur3_x86_32_hashInt"})
 @Warmup(iterations = 5)
 @Measurement(iterations = 10)
 public class HashWithSuperWord {
