@@ -41,7 +41,8 @@ import org.apache.spark.unsafe.hash.Murmur3_x86_32;
 @Fork(value = 1, jvmArgsAppend = {
   "-XX:+UseSuperWord",
   "-XX:+UnlockDiagnosticVMOptions",
-  "-XX:CompileCommand=print,*HashWithSuperWord.Murmur3_x86_32_hashInt"})
+  "-XX:CompileCommand=print,*HashWithSuperWord.Murmur3_x86_32_hashInt",
+  "-XX:PrintAssemblyOptions=intel"})
 @Warmup(iterations = 5)
 @Measurement(iterations = 10)
 public class HashWithSuperWord {
