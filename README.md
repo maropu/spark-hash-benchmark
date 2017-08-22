@@ -2,7 +2,13 @@ This is benchmark code for hash functions in Apache Spark using JMH.
 
 ## How to run benchmar code
 
+You run a script below:
+
     $ ./bin/run-hash-benchmark
+
+If you would like to print compiled assembly together, you need to define `ENABLE_PRINT_ASSEMBLY` like:
+
+    $ ENABLE_PRINT_ASSEMBLY=1 $ ./bin/run-hash-benchmark
 
 ## Performance results
 
